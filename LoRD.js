@@ -27,14 +27,14 @@ const fvid = {
 	 key: { 
           fromMe: false,
 	      participant: "0@s.whatsapp.net", 
-	     remoteJid: "120363040549014341@g.us" 
+	     remoteJid: "966502948769@g.us" 
                 },
 	 message: { 
                  "videoMessage": { 
-                 "title": `LoRD-MD`,
-                 "h": `LoRD-MD`,
+                 "title": `bot`,
+                 "h": `bot`,
                  'duration': '99999', 
-                 'caption': `LoRD-MD`,
+                 'caption': `bot`,
                  'jpegThumbnail': global.thumb
                         }
                        }
@@ -52,7 +52,7 @@ const lordofc = {
                             itemCount : 123,
                             itemCoun : 404,
                             surface : 404,
-                            message: `© LoRD-MD`,
+                            message: `© bot by yaser`,
                             orderTitle: 'B',
                             thumbnail: global.thumb, 
                             sellerJid: '0@s.whatsapp.net'
@@ -63,40 +63,7 @@ const lordofc = {
 
 //tod Link
  const todlink =[
-'https://youtu.be/IiYRFELAC0s',
-'https://youtu.be/bNoFWGc1iJ0',
-'https://youtu.be/DKm8Fg7dAp0',
-'https://youtu.be/PagvjtVfsPk',
-'https://youtu.be/CQLgEvxPs2w',
-'https://youtu.be/MsLnLxxjzPE',
-'https://youtu.be/YkDCqgk-QZY',
-'https://youtu.be/RGihGa5eAA8',
-'https://youtu.be/YkDCqgk-QZY',
-'https://youtu.be/KCOdjVN-x64',
-'https://youtu.be/6t_fdHhFrTg',
-'https://youtu.be/xzu_ODGpCRs',
-'https://youtu.be/Rz1diG58Rhs',
-'https://youtu.be/umQDV0UHUsQ',
-'https://youtu.be/W3m3yKpMTDg',
-'https://youtu.be/jRDJv5lfiH0',
-'https://youtu.be/FjdUiHW5JpQ',
-'https://youtu.be/i3OgJLwB2lc',
-'https://youtu.be/r1_EDhYbsHA',
-'https://youtu.be/MsLnLxxjzPE',
-'https://youtu.be/JWHV8lPTzPs',
-'https://youtu.be/EjVcqMknvUU',
-'https://youtu.be/2iCEd94TZ4o',
-'https://youtu.be/S8F2L3v10mA',
-'https://youtu.be/xvRWA9_18So',
-'https://youtu.be/sSynIGIVjUs',
-'https://youtu.be/E6NQYmO2qbA',
-'https://youtu.be/usY2mQGtpyw',
-'https://youtu.be/dMPnLAXAOBY',
-'https://youtu.be/b0md2fEIFpg',
-'https://youtu.be/e08eDavj0oI',
-'https://youtu.be/IYo8iXPCmgQ',
-'https://youtu.be/iuHy1fHikVo',
-'https://youtu.be/TwbhA23jSsw',
+
 ]
 let tod = todlink[Math.floor(Math.random() * (todlink.length))]
 
@@ -146,7 +113,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         const isCmd = body.startsWith(prefix)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
-        const pushname = m.pushName || "No Name"
+        const pushname = m.pushName || "بدون اسم"
         const botNumber = await hisoka.decodeJid(hisoka.user.id)
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
@@ -453,7 +420,7 @@ break
             break
      case 'join': {
                 if (!isCreator) throw mess.owner
-                if (!text) throw 'Enter the group link!'
+                if (!text) throw 'أدخل رابط المجموعة!'
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
                 m.reply(mess.wait)
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
@@ -846,7 +813,7 @@ break
             case 'delete': case 'del': {
                 if (!m.quoted) throw false
                 let { chat, fromMe, id, isBaileys } = m.quoted
-                if (!isBaileys) throw 'The message was not sent by bot!'
+                if (!isBaileys) throw 'لم يتم إرسال الرسالة بواسطة الروبوت!'
                 hisoka.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
@@ -862,22 +829,22 @@ break
                     let btn = [{
                                 urlButton: {
                                     displayText: '𝑆𝑜𝑢𝑟𝑐𝑒 𝐶𝑜𝑑𝑒',
-                                    url: 'https://github.com/Lord-official/LoRD-MD'
+                                    url: 'https://github.com/Yaser268990'
                                 }
                             }, {
                                 urlButton: {
                                     displayText: '𝐼𝑛𝑠𝑡𝑎𝑔𝑟𝑎𝑚',
-                                    url: 'https://instagram.com/__light__seeker__3?igshid=YmMyMTA2M2Y='
+                                    url: 'https://instagram.com'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '𝐵𝑜𝑡 𝑆𝑡𝑎𝑡𝑢𝑠',
+                                    displayText: 'حالة البوت',
                                     id: 'ping'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '𝑂𝑤𝑛𝑒𝑟',
-                                    id: 'owner'
+                                    displayText: 'المالك',
+                                    id: 'المالك'
                                 }  
                             }, {
                                 quickReplyButton: {
@@ -901,22 +868,22 @@ break
 		    let btn = [{
                                 urlButton: {
                                     displayText: '𝑆𝑜𝑢𝑟𝑐𝑒 𝐶𝑜𝑑𝑒',
-                                    url: 'https://github.com/Lord-official/LoRD-MD '
+                                    url: 'https://github.com/Yaser268990 '
                                 }
                             }, {
                                 urlButton: {
                                     displayText: '𝐼𝑛𝑠𝑡𝑎𝑔𝑟𝑎𝑚',
-                                    url: 'https://instagram.com/__light__seeker__3?igshid=YmMyMTA2M2Y='
+                                    url: 'https://instagram.com'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '𝐵𝑜𝑡 𝑆𝑡𝑎𝑡𝑢𝑠',
+                                    displayText: 'حالة البوت',
                                     id: 'ping'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '𝑂𝑤𝑛𝑒𝑟',
-                                    id: 'owner'
+                                    displayText: 'المالك',
+                                    id: 'المالك'
                                 }  
                             }, {
                                 quickReplyButton: {
@@ -938,7 +905,7 @@ break
                 let encmedia = await hisoka.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
             } else if (/video/.test(mime)) {
-                if ((quoted.msg || quoted).seconds > 11) return m.reply('Maximum 10 seconds!')
+                if ((quoted.msg || quoted).seconds > 11) return m.reply('بحد أقصى 10 ثوان!')
                 let media = await quoted.download()
                 let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
@@ -958,7 +925,7 @@ break
 	    }
 	    break
             case 'toimage': case 'toimg': case 'photo':  {
-                if (!quoted) throw 'Reply Image'
+                if (!quoted) throw 'صورة الرد'
                 if (!/webp/.test(mime)) throw `reply sticker with caption *${prefix + command}*`
                 m.reply(mess.wait)
                 let media = await hisoka.downloadAndSaveMediaMessage(quoted)
@@ -973,13 +940,13 @@ break
             }
             break
 	        case 'tomp4': case 'tovideo': {
-                if (!quoted) throw 'Reply Image'
+                if (!quoted) throw 'صورة الرد'
                 if (!/webp/.test(mime)) throw `reply sticker with caption *${prefix + command}*`
                 m.reply(mess.wait)
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await hisoka.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
-                await hisoka.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: m })
+                await hisoka.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'تحويل Webp إلى فيديو' } }, { quoted: m })
                 await fs.unlinkSync(media)
             }
             break
@@ -1021,7 +988,7 @@ break
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await hisoka.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
-                await hisoka.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
+                await hisoka.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'تحويل Webp إلى فيديو' }, gifPlayback: true }, { quoted: m })
                 await fs.unlinkSync(media)
             }
             break
@@ -1068,10 +1035,10 @@ break
                 if (!text) throw `Example : ${prefix + command} story wa anime`
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
+                let teks = 'بحث يوتيوب\n\n نتيجة من '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-                    teks += `⭔ 𝑵𝒐 : ${no++}\n🎬 𝑻𝒚𝒑𝒆 : ${i.type}\n🎥 𝑽𝒊𝒅𝒆𝒐 ID : ${i.videoId}\n🍃 𝑻𝒊𝒕𝒍𝒆 : ${i.title}\n 𝑽𝒊𝒘𝒆𝒔 : ${i.views}\n💡 𝑫𝒖𝒓𝒂𝒕𝒊𝒐𝒏 : ${i.timestamp}\n📺 𝑼𝒑𝒍𝒐𝒂𝒅 𝑨𝒕 : ${i.ago}\n📜 𝑨𝒖𝒕𝒉𝒆𝒓 : ${i.author.name}\n🖇️ 𝑼𝒓𝒍 : ${i.url}\n\n─────────────────\n\n`
+                    teks += `⭔ 𝑵𝒐 : ${no++}\n🎬 فرع : ${i.type}\n🎥 فديو ID : ${i.videoId}\n🍃 عنوان الفديو : ${i.title}\n المشاهدات : ${i.views}\n💡 مدة الفديو : ${i.timestamp}\n📺 تاريخ رفع الفديو : ${i.ago}\n📜 صاحب الفديو : ${i.author.name}\n🖇️ رابط الفديو : ${i.url}\n\n─────────────────\n\n`
                 }
                 hisoka.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
@@ -1087,7 +1054,7 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: images },
-                    caption: `*-------「 IMAGE SEARCH 」-------*
+                    caption: `*-------「 بحث في الصور 」-------*
 🤠 *𝑸𝒖𝒆𝒓𝒚* : ${text}
 🔗 *𝑴𝒆𝒅𝒊𝒂 𝑼𝒓𝒍* : ${images}`,
                     footer: hisoka.user.name,
@@ -1123,7 +1090,7 @@ case 'ytmp4': case 'video': case 'ytv': {
         let teks = text ? text : m.quoted && m.quoted.text
                 if (!teks) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 `
                 let media = await ytv(teks)
-                if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media))
+                if (media.filesize >= 100000) return m.reply('ملف تجاوز الحد '+util.format(media))
 let buttons = [
                         { buttonId: `ytvv ${isUrl(text)} 240p`, buttonText: { displayText: '240p' }, type: 1 },
                         { buttonId: `ytvv ${isUrl(text)} 360p`, buttonText: { displayText: '360p' }, type: 1 },
@@ -1146,7 +1113,7 @@ const { instagramdl, instagramdlv2, instagramdlv3 } = require('@bochilteam/scrap
    let urla = a[0].url
  await hisoka.sendMessage(m.chat, { text : '𝑃𝑙𝑒𝑎𝑠𝑒 𝑤𝑎𝑖𝑡...' }, {quoted : m})
   for(let { thumbnail, url } of a)
-      hisoka.sendFileUrl(m.chat, urla, '𝐷𝑜𝑤𝑛𝑙𝑜𝑎𝑑𝑒𝑑 𝐹𝑟𝑜𝑚 𝐼𝑛𝑠𝑡𝑎𝑔𝑟𝑎𝑚🐦', m)
+      hisoka.sendFileUrl(m.chat, urla, 'تنزيل من الانستقرام🐦', m)
     } catch (e) {
               m.reply('${e}')
             }
@@ -1181,9 +1148,9 @@ let acr = new acrcloud({
 		if (code !== 0) throw msg
 		let { title, artists, album, genres, release_date } = res.metadata.music[0]
 		let button = [
-                    {buttonId: `play ${title}`, buttonText: {displayText: 'HEAR THIS️'}, type: 1}
+                    {buttonId: `play ${title}`, buttonText: {displayText: 'اسمع هذا️'}, type: 1}
                 ]
-		let txt = `*𝑻𝒊𝒕𝒍𝒆:* ${title}
+		let txt = `*عنوان:* ${title}
 
 *𝑨𝒓𝒕𝒊𝒔𝒕𝒔:* ${artists !== undefined ? artists.map(v => v.name).join(', ') : ''}
 
@@ -1196,7 +1163,7 @@ let acr = new acrcloud({
 		
      await hisoka.sendButtonText(m.chat, button, txt, hisoka.user.name, m)
 	//	await m.reply(txt)
-	} else throw 'Reply audio/video!'
+	} else throw 'رد بالصوت / الفيديو!'
 }catch(e){
     m.reply(`${e}`)
   }}
@@ -1221,10 +1188,10 @@ key: {
 	            try {
                 let { yta } = require('./lib/y2mate')
                 let teks = text ? text : m.quoted && m.quoted.text
-                if (!teks) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag`   
+                if (!teks) throw `مثال : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag`   
                 let media = await yta(teks)
                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media))
-                hisoka.sendImage(m.chat, media.thumb, `🎧 𝑻𝒊𝒕𝒍𝒆: ${media.title}\n📂 𝑭𝒊𝒍𝒆 𝑺𝒊𝒛𝒆: ${media.filesizeF}\n🖇️ 𝒖𝒓𝒍: ${isUrl(teks)}\n🍃 𝑹𝒆𝒔𝒐𝒍𝒖𝒕𝒊𝒐𝒏: ${args[1] || '128kbps'}`, m)
+                hisoka.sendImage(m.chat, media.thumb, `🎧 عنوان: ${media.title}\n📂 حجم الملف: ${media.filesizeF}\n🖇️ رابط: ${isUrl(teks)}\n🍃 𝑹𝒆𝒔𝒐𝒍𝒖𝒕𝒊𝒐𝒏: ${args[1] || '128kbps'}`, m)
                hisoka.sendMessage(m.chat, { document: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })                
                 } catch (e) {
                 	m.reply('```' + e + '```')
@@ -1246,7 +1213,7 @@ key: {
                 anu = await wallpaper(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
 		let buttons = [
-                    {buttonId: `wallpaper ${text}`, buttonText: {displayText: '𝐍𝐄𝐗𝐓 𝐈𝐌𝐀𝐆𝐄'}, type: 1}
+                    {buttonId: `wallpaper ${text}`, buttonText: {displayText: 'الصوره التاليه'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: result.image[0] },
@@ -1259,12 +1226,12 @@ key: {
             }
             break
             case 'wikimedia': {
-                if (!text) throw 'Enter Query Title'
+                if (!text) throw 'أدخل عنوان الاستعلام'
 		let { wikimedia } = require('./lib/scraper')
                 anu = await wikimedia(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
                 let buttons = [
-                    {buttonId: `wikimedia ${text}`, buttonText: {displayText: '𝐍𝐞𝐱𝐭 𝐈𝐦𝐚𝐠𝐞'}, type: 1}
+                    {buttonId: `wikimedia ${text}`, buttonText: {displayText: 'الصوره التاليه'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: result.image },
@@ -1278,12 +1245,12 @@ key: {
             break
 
 	        case 'tiktok': case 'tiktoknowm': {
-                if (!text) throw 'Enter a Link Query!'
+                if (!text) throw 'أدخل استعلام ارتباط!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '𝐖𝐈𝐓𝐇 𝐖𝐀𝐓𝐄𝐑𝐌𝐀𝐑𝐊'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '𝐀𝐔𝐃𝐈𝐎'}, type: 1}
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: 'صوت'}, type: 1}
                 ]
                 let buttonMessage = {
                     video: { url: anu.result.nowatermark },
@@ -1296,12 +1263,12 @@ key: {
             }
             break
             case 'tiktokwm': case 'tiktokwatermark': {
-                if (!text) throw 'Enter Query Link!'
+                if (!text) throw 'أدخل ارتباط الاستعلام!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '𝐍𝐎 𝐖𝐀𝐓𝐄𝐑𝐌𝐀𝐑𝐊'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '𝐀𝐔𝐃𝐈𝐎'}, type: 1}
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: 'صوت'}, type: 1}
                 ]
                 let buttonMessage = {
                     video: { url: anu.result.watermark },
@@ -1315,7 +1282,7 @@ key: {
             break
          
             case 'soundcloud': case 'scdl': {
-                if (!text) throw 'No Query Title'
+                if (!text) throw 'لا يوجد عنوان استعلام'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
                 let msg = await hisoka.sendImage(m.chat, anu.result.thumb, `⭔ Title : ${anu.result.title}\n⭔ Url : ${isUrl(text)[0]}`)
@@ -1370,11 +1337,11 @@ key: {
                 }
                 break
             case 'setcmd': {
-                if (!m.quoted) throw 'Reply Message!'
-                if (!m.quoted.fileSha256) throw 'SHA256 Hash Missing'
+                if (!m.quoted) throw 'رسالة الرد!'
+                if (!m.quoted.fileSha256) throw 'SHA256 تجزئة مفقودة'
                 if (!text) throw `To Command What?`
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'You have no permission to change this sticker command'
+                if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'ليس لديك إذن لتغيير أمر الملصق هذا'
                 global.db.sticker[hash] = {
                     text,
                     mentionedJid: m.mentionedJid,
@@ -1388,7 +1355,7 @@ key: {
             case 'delcmd': {
                 let hash = m.quoted.fileSha256.toString('base64')
                 if (!hash) throw `No hashes`
-                if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'You have no permission to delete this sticker command'              
+                if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'ليس لديك إذن بحذف أمر الملصق هذا'              
                 delete global.db.sticker[hash]
                 m.reply(`Done!`)
             }
@@ -1404,16 +1371,16 @@ ${Object.entries(global.db.sticker).map(([key, value], index) => `${index + 1}. 
             break
             case 'lockcmd': {
                 if (!isCreator) throw mess.owner
-                if (!m.quoted) throw 'Reply Pesan!'
-                if (!m.quoted.fileSha256) throw 'SHA256 Hash Missing'
+                if (!m.quoted) throw 'رسالة الرد!'
+                if (!m.quoted.fileSha256) throw 'SHA256 تجزئة مفقودة'
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (!(hash in global.db.sticker)) throw 'Hash not found in database'
+                if (!(hash in global.db.sticker)) throw 'لم يتم العثور على الهاش في قاعدة البيانات'
                 global.db.sticker[hash].locked = !/^un/i.test(command)
                 m.reply('Done!')
             }
             break
             case 'addmsg': {
-                if (!m.quoted) throw 'Reply Message You Want To Save In Database'
+                if (!m.quoted) throw 'الرد على الرسالة التي تريد حفظها في قاعدة البيانات'
                 if (!text) throw `Example : ${prefix + command} nama file`
                 let msgs = global.db.database
                 if (text.toLowerCase() in msgs) throw `'${text}' telah terdaftar di list pesan`
@@ -1436,7 +1403,7 @@ View list of Messages With ${prefix}listmsg`)
             case 'listmsg': {
                 let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
 	        let seplit = Object.entries(global.db.database).map(([nama, isi]) => { return { nama, ...isi } })
-		let teks = '「 LIST DATABASE 」\n\n'
+		let teks = '「 قائمة قاعدة البيانات 」\n\n'
 		for (let i of seplit) {
 		    teks += `⬡ *Name :* ${i.nama}\n⬡ *Type :* ${getContentType(i.message).replace(/Message/i, '')}\n────────────────────────\n\n`
 	        }
@@ -1451,21 +1418,21 @@ View list of Messages With ${prefix}listmsg`)
             }
 	    break
 	    case 'anonymous': {
-                if (m.isGroup) return m.reply('Feature Cannot Be Used For Groups!')
+                if (m.isGroup) return m.reply('لا يمكن استخدام الميزة للمجموعات!')
 				this.anonymous = this.anonymous ? this.anonymous : {}
 				let buttons = [
-                    { buttonId: 'start', buttonText: { displayText: '𝐒𝐓𝐀𝐑𝐓' }, type: 1 }
+                    { buttonId: 'start', buttonText: { displayText: 'بدء' }, type: 1 }
                 ]
                 hisoka.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await hisoka.getName(m.sender)} Welcome To Anonymous Chat\n\nClick Button Below to find a partner\`\`\``, hisoka.user.name, m)
             }
 			break
             case 'keluar': case 'leave': {
-                if (m.isGroup) return m.reply('Feature Cannot Be Used For Groups!')
+                if (m.isGroup) return m.reply('لا يمكن استخدام الميزة للمجموعات!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let room = Object.values(this.anonymous).find(room => room.check(m.sender))
                 if (!room) {
                     let buttons = [
-                        { buttonId: 'start', buttonText: { displayText: '𝐒𝐓𝐀𝐑𝐓' }, type: 1 }
+                        { buttonId: 'start', buttonText: { displayText: 'بدء' }, type: 1 }
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, `\`\`\`You are not in an anonymous session, press the button to find a partner \`\`\``)
                     throw false
@@ -1477,20 +1444,20 @@ View list of Messages With ${prefix}listmsg`)
                 if (command === 'leave') break
             }
             case 'mulai': case 'start': {
-                if (m.isGroup) return m.reply('Feature Cannot Be Used For Groups!')
+                if (m.isGroup) return m.reply('لا يمكن استخدام الميزة للمجموعات!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 if (Object.values(this.anonymous).find(room => room.check(m.sender))) {
                     let buttons = [
-                        { buttonId: 'keluar', buttonText: { displayText: '𝐒𝐓𝐎𝐏' }, type: 1 }
+                        { buttonId: 'keluar', buttonText: { displayText: 'توقف' }, type: 1 }
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Stop Your Anonymous Session\`\`\``, hisoka.user.name, m)
                     throw false
                 }
-                let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
+                let room = Object.values(this.anonymous).find(room => room.state === 'انتظار' && !room.check(m.sender))
                 if (room) {
                     let buttons = [
-                        { buttonId: 'next', buttonText: { displayText: '𝐒𝐊𝐈𝐏' }, type: 1 },
-                        { buttonId: 'keluar', buttonText: { displayText: '𝐒𝐓𝐎𝐏' }, type: 1 }
+                        { buttonId: 'next', buttonText: { displayText: 'التالي' }, type: 1 },
+                        { buttonId: 'keluar', buttonText: { displayText: 'توقف' }, type: 1 }
                     ]
                     await hisoka.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, now you can send message\`\`\``, hisoka.user.name, m)
                     room.b = m.sender
@@ -1502,7 +1469,7 @@ View list of Messages With ${prefix}listmsg`)
                         id,
                         a: m.sender,
                         b: '',
-                        state: 'WAITING',
+                        state: 'انتظار',
                         check: function (who = '') {
                             return [this.a, this.b].includes(who)
                         },
@@ -1511,19 +1478,19 @@ View list of Messages With ${prefix}listmsg`)
                         },
                     }
                     let buttons = [
-                        { buttonId: 'keluar', buttonText: { displayText: '𝐒𝐓𝐎𝐏' }, type: 1 }
+                        { buttonId: 'keluar', buttonText: { displayText: 'توقف' }, type: 1 }
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Please wait, looking for a partner\`\`\``, hisoka.user.name, m)
                 }
                 break
             }
             case 'next': case 'lanjut': {
-                if (m.isGroup) return m.reply('Feature Cannot Be Used For Groups!')
+                if (m.isGroup) return m.reply('لا يمكن استخدام الميزة للمجموعات!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let romeo = Object.values(this.anonymous).find(room => room.check(m.sender))
                 if (!romeo) {
                     let buttons = [
-                        { buttonId: 'start', buttonText: { displayText: '𝐒𝐓𝐀𝐑𝐓' }, type: 1 }
+                        { buttonId: 'start', buttonText: { displayText: 'بدء' }, type: 1 }
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, `\`\`\`You are not in an anonymous session, press the button to find a partner\`\`\``)
                     throw false
@@ -1531,11 +1498,11 @@ View list of Messages With ${prefix}listmsg`)
                 let other = romeo.other(m.sender)
                 if (other) await hisoka.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
                 delete this.anonymous[romeo.id]
-                let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
+                let room = Object.values(this.anonymous).find(room => room.state === 'انتظار' && !room.check(m.sender))
                 if (room) {
                     let buttons = [
-                        { buttonId: 'next', buttonText: { displayText: '𝐒𝐊𝐈𝐏' }, type: 1 },
-                        { buttonId: 'keluar', buttonText: { displayText: '𝐒𝐓𝐎𝐏' }, type: 1 }
+                        { buttonId: 'next', buttonText: { displayText: 'التالي' }, type: 1 },
+                        { buttonId: 'keluar', buttonText: { displayText: 'توقف' }, type: 1 }
                     ]
                     await hisoka.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, now you can send message\`\`\``, hisoka.user.name, m)
                     room.b = m.sender
@@ -1556,7 +1523,7 @@ View list of Messages With ${prefix}listmsg`)
                         },
                     }
                     let buttons = [
-                        { buttonId: 'keluar', buttonText: { displayText: '𝐒𝐓𝐎𝐏' }, type: 1 }
+                        { buttonId: 'keluar', buttonText: { displayText: 'توقف' }, type: 1 }
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Wait Looking For Partners \`\`\``, hisoka.user.name, m)
                 }
@@ -1614,41 +1581,41 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 case 'menulist':{
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
-                    title: `𝑯𝒊 ${pushname} \n𝑻𝒉𝒊𝒔 𝑰𝒔 𝒎𝒆𝒏𝒖`,
+                    title: `𝑯𝒊 ${pushname} \nهاذه القائمة`,
                     description: `🐦`,
                     buttonText: "Menu",
-                    footerText: "LoRD-MD",
+                    footerText: "bot by yaser",
                     listType: "SINGLE_SELECT",
                     sections: [{
-								"title": "Group Features",
+								"title": "القائمة",
 								"rows": [
 									{
-										"title": "𝑮𝒓𝒐𝒖𝒑 𝑴𝒆𝒏𝒖",
+										"title": "قائمة المجموعه",
 										"description": "",
 										"rowId": `groupmenu`
 									},
 									{
-										"title": "𝑪𝒐𝒏𝒗𝒆𝒓𝒕 𝑴𝒆𝒏𝒖",
+										"title": "قائمة التحويل",
 										"description": "",
 										"rowId": `convertmenu`
 									},
 									{
-										"title": "𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅 𝑴𝒆𝒏𝒖",
+										"title": "قائمة التنزيل",
 										"description": "",
 										"rowId": `downloadmenu`
 									},
 									{
-										"title": "𝑺𝒆𝒂𝒓𝒄𝒉 𝑴𝒆𝒏𝒖",
+										"title": "قائمة البحث",
 										"description": "",
 										"rowId": `searchmenu`
 									},
 										{
-											"title": "𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖",
+											"title": "القائمة الرئيسيه",
 										"description": "",
 										"rowId": `mainmenu`
 										},
 										{
-											"title": "𝑫𝒂𝒕𝒂𝑩𝒂𝒔𝒆 𝑴𝒆𝒏𝒖",
+											"title": "قاعده البيانات",
 										"description": "",
 										"rowId": `databasemenu`
 										},
@@ -1658,18 +1625,18 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `anonymousmenu`
 										},
 										{
-										"title": "𝑽𝒐𝒊𝒄𝒆 𝑴𝒆𝒏𝒖",
+										"title": "قائمة الاصوات",
 										"description": "",
 										"rowId": `voicemenu`
 										},
 										{
-											"title": "𝑶𝒘𝒏𝒆𝒓 𝑴𝒆𝒏𝒖",
+											"title": "قائمة مالك البوت",
 										"description": "",
 										"rowId": `ownermenu`
 										},
 										{
 											"title": "𝑺𝒐𝒖𝒓𝒄𝒆 𝑪𝒐𝒅𝒆",
-										"description": "ʟᴏʀᴅ-ᴍᴅ 𝑔𝑖𝑡",
+										"description": "𝑔𝑖𝑡",
 										"rowId": `sc`
 										}
 								]
@@ -1685,70 +1652,68 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             break
 case 'allmenu': {
   	anu = `
-      𝐀𝐋𝐋 𝐌𝐄𝐍𝐔
+       جميع الاوامر
   
-  *𝑮𝑹𝑶𝑼𝑷 𝑴𝑬𝑵𝑼*
-𑁍 ${prefix}𝑙𝑖𝑛𝑘𝑔𝑟𝑜𝑢𝑝
-𑁍 ${prefix}𝑠𝑒𝑡𝑝𝑝𝑔𝑐[𝒊𝒎𝒂𝒈𝒆]
-𑁍 ${prefix}𝑠𝑒𝑡𝑛𝑎𝑚𝑒 [𝒕𝒆𝒙𝒕]
-𑁍 ${prefix}𝑠𝑒𝑡𝑑𝑒𝑠𝑐 [𝒕𝒆𝒙𝒕]
+  *قائمة المجموعه*
+𑁍 ${prefix}𝑙𝑖𝑛𝑘𝑔𝑟𝑜𝑢𝑝 
+𑁍 ${prefix}𝑠𝑒𝑡𝑝𝑝𝑔𝑐[صورة]
+𑁍 ${prefix}𝑠𝑒𝑡𝑛𝑎𝑚𝑒 [نص]
+𑁍 ${prefix}𝑠𝑒𝑡𝑑𝑒𝑠𝑐 [نص]
 𑁍 ${prefix}𝑔𝑟𝑜𝑝 [𝒐𝒑𝒕𝒊𝒐𝒏]
 𑁍 ${prefix}𝑒𝑑𝑖𝑡𝑖𝑛𝑓𝑜 [𝒐𝒑𝒕𝒊𝒐𝒏]
-𑁍 ${prefix}𝑎𝑑𝑑 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}𝑘𝑖𝑐𝑘 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}ℎ𝑖𝑑𝑒𝑡𝑎𝑔 [𝒕𝒆𝒙𝒕]
-𑁍 ${prefix}𝑡𝑎𝑔𝑎𝑙𝑙 [𝒕𝒆𝒙𝒕]
+𑁍 ${prefix}𝑎𝑑𝑑 @مستخدم
+𑁍 ${prefix}𝑘𝑖𝑐𝑘 @مستخدم
+𑁍 ${prefix}ℎ𝑖𝑑𝑒𝑡𝑎𝑔 [نص]
+𑁍 ${prefix}𝑡𝑎𝑔𝑎𝑙𝑙 [نص]
 𑁍 ${prefix}𝑎𝑛𝑡𝑖𝑙𝑖𝑛𝑘 [𝒐𝒏/𝒐𝒇𝒇]
 𑁍 ${prefix}𝑚𝑢𝑡𝑒 [𝒐𝒏/𝒐𝒇𝒇]
-𑁍 ${prefix}𝑝𝑟𝑜𝑚𝑜𝑡𝑒 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}𝑑𝑒𝑚𝑜𝑡𝑒 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}𝑣𝑜𝑡𝑒 [𝒕𝒆𝒙𝒕]
+𑁍 ${prefix}𝑝𝑟𝑜𝑚𝑜𝑡𝑒 @مستخدم
+𑁍 ${prefix}𝑑𝑒𝑚𝑜𝑡𝑒 @مستخدم
+𑁍 ${prefix}𝑣𝑜𝑡𝑒 [نص]
 𑁍 ${prefix}𝑑𝑒𝑣𝑜𝑡𝑒
 𑁍 ${prefix}𝑢𝑝𝑣𝑜𝑡𝑒
 𑁍 ${prefix}𝑐𝑒𝑘𝑣𝑜𝑡𝑒
 
-     *𝑫𝑶𝑾𝑵𝑳𝑶𝑨𝑫𝑬𝑹*    
-𑁍 ${prefix}𝑝𝑙𝑎𝑦 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑛𝑜𝑤𝑚 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑤𝑚 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑚𝑝3 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑖𝑛𝑠𝑡𝑎𝑔𝑟𝑎𝑚 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑓𝑎𝑐𝑒𝑏𝑜𝑜𝑘 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑦𝑡𝑚𝑝3 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑦𝑡𝑚𝑝4 [𝒖𝒓𝒍]
+     *قائمة التنزيل*    
+𑁍 ${prefix}𝑝𝑙𝑎𝑦 [اسم الاغنية]
+𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑛𝑜𝑤𝑚 [رابط]
+𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑤𝑚 [رابط]
+𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑚𝑝3 [رابط]
+𑁍 ${prefix}𝑖𝑛𝑠𝑡𝑎𝑔𝑟𝑎𝑚 [رابط]
+𑁍 ${prefix}𝑓𝑎𝑐𝑒𝑏𝑜𝑜𝑘 [رابط]
+𑁍 ${prefix}𝑦𝑡𝑚𝑝3 [رابط]
+𑁍 ${prefix}𝑦𝑡𝑚𝑝4 [رابط]
 ‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎
-     *𝑺𝑬𝑨𝑹𝑪𝑯 𝑴𝑬𝑵𝑼*
-𑁍 ${prefix}𝑦𝑡𝑠 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑔𝑜𝑜𝑔𝑙𝑒 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑔𝑖𝑚𝑎𝑔𝑒 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑤𝑎𝑙𝑙𝑝𝑎𝑝𝑒𝑟 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑤𝑖𝑘𝑖𝑚𝑒𝑑𝑖𝑎 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑦𝑡𝑠𝑒𝑎𝑟??ℎ [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑟𝑖𝑛𝑔𝑡𝑜𝑛𝑒 [𝒒𝒖𝒆𝒓𝒚]
+     *قائمة البحث*
+𑁍 ${prefix}𝑦𝑡𝑠 [البحث في اليوتيوب]
+𑁍 ${prefix}𝑔𝑜𝑜𝑔𝑙𝑒 [البحث في غوغل]
+𑁍 ${prefix}𝑔𝑖𝑚𝑎𝑔𝑒 [البحث عن الصور]
+𑁍 ${prefix}𝑤𝑎𝑙𝑙𝑝𝑎𝑝𝑒𝑟 [البحث عن خلفية]
+𑁍 ${prefix}𝑤𝑖𝑘𝑖𝑚𝑒𝑑𝑖𝑎 [البحث في وكبيديا]
+𑁍 ${prefix}𝑦𝑡𝑠𝑒𝑎𝑟??ℎ [البحث في اليوتوب]
+𑁍 ${prefix}𝑟𝑖𝑛𝑔𝑡𝑜𝑛𝑒 [البحث في رنات]
 
-      *𝑪𝑶𝑵𝑽𝑬𝑹𝑻 𝑴𝑬𝑵𝑼*
-𑁍 ${prefix}𝑡𝑜𝑖𝑚𝑎𝑔𝑒
-𑁍 ${prefix}𝑟𝑒𝑚𝑜𝑣𝑒𝑏𝑔
-𑁍 ${prefix}𝑠𝑡𝑖𝑐𝑘𝑒𝑟
-𑁍 ${prefix}𝑒𝑚𝑜𝑗𝑖𝑚𝑖𝑥
-𑁍 ${prefix}𝑡𝑜𝑣𝑖𝑑𝑒𝑜
-𑁍 ${prefix}𝑡𝑜𝑔𝑖𝑓
-𑁍 ${prefix}𝑡𝑜𝑢𝑟𝑙
-𑁍 ${prefix}𝑡𝑜𝑣𝑛
-𑁍 ${prefix}𝑡𝑜𝑚𝑝3
-𑁍 ${prefix}𝑡𝑜𝑎𝑢𝑑𝑖𝑜
-𑁍 ${prefix}𝑠𝑡𝑦𝑙𝑒𝑡𝑒𝑥𝑡
+      *قائمة التحويل*
+𑁍 ${prefix}𝑡𝑜𝑖𝑚𝑎𝑔𝑒   (تحويل ملصق لصورة)
+𑁍 ${prefix}𝑟𝑒𝑚𝑜𝑣𝑒𝑏𝑔  (حذف خلفية صورة)
+𑁍 ${prefix}𝑠𝑡𝑖𝑐𝑘𝑒𝑟     (تحويل الى ملصق)
+𑁍 ${prefix}𝑒𝑚𝑜𝑗𝑖𝑚𝑖𝑥   (دمج ايموجيات)
+𑁍 ${prefix}𝑡𝑜𝑣𝑖𝑑𝑒𝑜     (تحويل الى فديو)
+𑁍 ${prefix}𝑡𝑜𝑔𝑖𝑓      (تحويل الى gif)
+𑁍 ${prefix}𝑡𝑜𝑢𝑟𝑙      (تحويل الى رابط)
+𑁍 ${prefix}𝑡𝑜𝑣𝑛      (تحويل الى صوت)
+𑁍 ${prefix}𝑠𝑡𝑦𝑙𝑒𝑡𝑒𝑥𝑡  (تغير خطوط)
 
-     *𝑴𝑨𝑰𝑵 𝑴𝑬𝑵𝑼*
-𑁍 ${prefix}𝑝𝑖𝑛𝑔
-𑁍 ${prefix}𝑜𝑤𝑛𝑒𝑟
+     *القائمة الرئيسيه*
+𑁍 ${prefix}𝑝𝑖𝑛𝑔 (البنق)
+𑁍 ${prefix}𝑜𝑤𝑛𝑒𝑟  (المالك)ئ
 𑁍 ${prefix}𝑚𝑒𝑛𝑢 / ${prefix}ℎ𝑒𝑙𝑝 / ${prefix}?
 𑁍 ${prefix}𝑑𝑒𝑙𝑒𝑡𝑒
 𑁍 ${prefix}𝑖𝑛𝑓𝑜𝑐ℎ𝑎𝑡
 𑁍 ${prefix}𝑙𝑖𝑠𝑡𝑔𝑐
 𑁍 ${prefix}𝑙𝑖𝑠𝑡𝑜𝑛𝑙𝑖𝑛𝑒
 
-     *𝑫𝑨𝑻𝑨𝑩𝑨𝑺𝑬 𝑴𝑬𝑵𝑼*
+     *قاعدة البيانات*
 𑁍 ${prefix}𝑠𝑒𝑡𝑐𝑚𝑑
 𑁍 ${prefix}𝑙𝑖𝑠𝑡𝑐𝑚𝑑
 𑁍 ${prefix}𝑑𝑒𝑙𝑐𝑚𝑑
@@ -1764,7 +1729,7 @@ case 'allmenu': {
 𑁍 ${prefix}𝑘𝑒𝑙𝑢𝑎𝑟
 𑁍 ${prefix}𝑠𝑒𝑛𝑑𝑘𝑜𝑛𝑡𝑎𝑘
 
-     *𝑽𝑶𝑰𝑪𝑬 𝑪𝑯𝑨𝑵𝑮𝑬𝑹*
+     *تغير الاصوات*
 𑁍 ${prefix}𝑏𝑎𝑠𝑠
 𑁍 ${prefix}𝑏𝑙𝑜𝑤𝑛
 𑁍 ${prefix}𝑑𝑒𝑒𝑝
@@ -1777,14 +1742,14 @@ case 'allmenu': {
 𑁍 ${prefix}𝑠𝑙𝑜𝑤
 𑁍 ${prefix}𝑡𝑢𝑝𝑎𝑖
 
-     *𝑶𝑾𝑵𝑬𝑹 𝑴𝑬𝑵𝑼*
+     *قائمة مالك البوت*
 𑁍 ${prefix}𝑐ℎ𝑎𝑡 [𝒐𝒑𝒕𝒊𝒐𝒏]
 𑁍 ${prefix}𝑗𝑜𝑖𝑛 [𝒍𝒊𝒏𝒌]
 𑁍 ${prefix}𝑙𝑒𝑎𝑣𝑒
-𑁍 ${prefix}𝑏𝑙𝑜𝑐𝑘 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}𝑢𝑛𝑏𝑙𝑜𝑐𝑘 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}𝑏𝑐𝑔𝑟𝑜𝑢𝑝 [𝒕𝒆𝒙𝒕]
-𑁍 ${prefix}𝑠𝑒𝑡𝑏𝑜𝑡𝑝𝑝 [𝒊𝒎𝒂𝒈𝒆]
+𑁍 ${prefix}𝑏𝑙𝑜𝑐𝑘 @مستخدم
+𑁍 ${prefix}𝑢𝑛𝑏𝑙𝑜𝑐𝑘 @مستخدم
+𑁍 ${prefix}𝑏𝑐𝑔𝑟𝑜𝑢𝑝 [نص]
+𑁍 ${prefix}𝑠𝑒𝑡𝑏𝑜𝑡𝑝𝑝 [صورة]
 𑁍 ${prefix}𝑠𝑒𝑡𝑒𝑥𝑖𝑓`
     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
@@ -1792,16 +1757,16 @@ case 'allmenu': {
                             hydratedContentText: anu,
                           //  locationMessage: {
                        //     jpegThumbnail: fs.readFileSync('./lib/lord.jpg')},
-                            hydratedFooterText: `LoRD-MD`,
+                            hydratedFooterText: `بوت`,
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: '𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑',
-                                    url: 'https://wa.me/919778383987'
+                                    url: 'https://wa.me/966502948769'
                                 }
                             }, {
                                 urlButton: {
                                     displayText: '𝒊𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎',
-                                    url: 'https://instagram.com/__light__seeker__3?igshid=YmMyMTA2M2Y='
+                                    url: ''
                                 }
                             }]
                         }
@@ -1819,13 +1784,13 @@ break
 
           case 'menu': case 'help': case '?': {
                 anu = `
-      𝐋𝐨𝐑𝐃-𝐌𝐃
+      بوت
  
-✘ 𝑽𝒆𝒓𝒔𝒊𝒐𝒏: 0.0.1
+✘ الاصدار: 0.0.1
 
-✘ 𝑳𝒊𝒃𝒓𝒂𝒓𝒚: Baileys-MD
+✘ المخزن: Baileys-MD
 
-✘ 𝑴𝒐𝒅𝒆: Public
+✘ الوضع: عام
 
 ✘ 𝑹𝒖𝒏𝒕𝒊𝒎𝒆: ${runtime(process.uptime())}
 `
@@ -1834,21 +1799,21 @@ break
                 let btn = [{
                                 urlButton: {
                                     displayText: '𝑮𝒊𝒕𝒉𝒖𝒃',
-                                    url: 'https://github.com/Lord-official'
+                                    url: 'https://github.com/Yaser268990'
                                 }
                             }, {
                                 urlButton: {
                                     displayText: '𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎',
-                                    url: 'https://instagram.com/__light__seeker__3?igshid=YmMyMTA2M2Y='
+                                    url: ''
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '𝑳𝒊𝒔𝒕 𝑴𝒆𝒏𝒖',
+                                    displayText: 'قائمة الاوامر',
                                     id: 'menulist'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '𝑨𝒍𝒍 𝒎𝒆𝒏𝒖',
+                                    displayText: 'جميع الاوامر',
                                     id: 'allmenu'
                                 }  
                             }, {
@@ -1865,22 +1830,22 @@ break
             break
 case 'groupmenu': {
 	            anu = `
-  *𝑮𝑹𝑶𝑼𝑷 𝑴𝑬𝑵𝑼*
-𑁍 ${prefix}𝑙𝑖𝑛𝑘𝑔𝑟𝑜𝑢𝑝
-𑁍 ${prefix}𝑠𝑒𝑡𝑝𝑝𝑔𝑐[𝒊𝒎𝒂𝒈𝒆]
-𑁍 ${prefix}𝑠𝑒𝑡𝑛𝑎𝑚𝑒 [𝒕𝒆𝒙𝒕]
-𑁍 ${prefix}𝑠𝑒𝑡𝑑𝑒𝑠𝑐 [𝒕𝒆𝒙𝒕]
+  *قائمة المجموعه*
+𑁍 ${prefix}𝑙𝑖𝑛𝑘𝑔𝑟𝑜𝑢𝑝 
+𑁍 ${prefix}𝑠𝑒𝑡𝑝𝑝𝑔𝑐[صورة]
+𑁍 ${prefix}𝑠𝑒𝑡𝑛𝑎𝑚𝑒 [نص]
+𑁍 ${prefix}𝑠𝑒𝑡𝑑𝑒𝑠𝑐 [نص]
 𑁍 ${prefix}𝑔𝑟𝑜𝑝 [𝒐𝒑𝒕𝒊𝒐𝒏]
 𑁍 ${prefix}𝑒𝑑𝑖𝑡𝑖𝑛𝑓𝑜 [𝒐𝒑𝒕𝒊𝒐𝒏]
-𑁍 ${prefix}𝑎𝑑𝑑 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}𝑘𝑖𝑐𝑘 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}ℎ𝑖𝑑𝑒𝑡𝑎𝑔 [𝒕𝒆𝒙𝒕]
-𑁍 ${prefix}𝑡𝑎𝑔𝑎𝑙𝑙 [𝒕𝒆𝒙𝒕]
+𑁍 ${prefix}𝑎𝑑𝑑 @مستخدم
+𑁍 ${prefix}𝑘𝑖𝑐𝑘 @مستخدم
+𑁍 ${prefix}ℎ𝑖𝑑𝑒𝑡𝑎𝑔 [نص]
+𑁍 ${prefix}𝑡𝑎𝑔𝑎𝑙𝑙 [نص]
 𑁍 ${prefix}𝑎𝑛𝑡𝑖𝑙𝑖𝑛𝑘 [𝒐𝒏/𝒐𝒇𝒇]
 𑁍 ${prefix}𝑚𝑢𝑡𝑒 [𝒐𝒏/𝒐𝒇𝒇]
-𑁍 ${prefix}𝑝𝑟𝑜𝑚𝑜𝑡𝑒 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}𝑑𝑒𝑚𝑜𝑡𝑒 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}𝑣𝑜𝑡𝑒 [𝒕𝒆𝒙𝒕]
+𑁍 ${prefix}𝑝𝑟𝑜𝑚𝑜𝑡𝑒 @مستخدم
+𑁍 ${prefix}𝑑𝑒𝑚𝑜𝑡𝑒 @مستخدم
+𑁍 ${prefix}𝑣𝑜𝑡𝑒 [نص]
 𑁍 ${prefix}𝑑𝑒𝑣𝑜𝑡𝑒
 𑁍 ${prefix}𝑢𝑝𝑣𝑜𝑡𝑒
 𑁍 ${prefix}𝑐𝑒𝑘𝑣𝑜𝑡𝑒
@@ -1891,56 +1856,54 @@ case 'groupmenu': {
   
 case 'downloadmenu': {
 	okemenu = `
-*𝑫𝑶𝑾𝑵𝑳𝑶𝑨𝑫𝑬𝑹*    
-𑁍 ${prefix}𝑝𝑙𝑎𝑦 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑛𝑜𝑤𝑚 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑤𝑚 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑚𝑝3 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑖𝑛𝑠𝑡𝑎𝑔𝑟𝑎𝑚 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑓𝑎𝑐𝑒𝑏𝑜𝑜𝑘 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑦𝑡𝑚𝑝3 [𝒖𝒓𝒍]
-𑁍 ${prefix}𝑦𝑡𝑚𝑝4 [𝒖𝒓𝒍]
+*قائمة التحميل*    
+𑁍 ${prefix}𝑝𝑙𝑎𝑦 [اسم الاغنية]
+𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑛𝑜𝑤𝑚 [رابط]
+𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑤𝑚 [رابط]
+𑁍 ${prefix}𝑡𝑖𝑘𝑡𝑜𝑘𝑚𝑝3 [رابط]
+𑁍 ${prefix}𝑖𝑛𝑠𝑡𝑎𝑔𝑟𝑎𝑚 [رابط]
+𑁍 ${prefix}𝑓𝑎𝑐𝑒𝑏𝑜𝑜𝑘 [رابط]
+𑁍 ${prefix}𝑦𝑡𝑚𝑝3 [رابط]
+𑁍 ${prefix}𝑦𝑡𝑚𝑝4 [رابط]
   `
   reply(okemenu)
    }
             break 
             case 'searchmenu': {
             	anu = `
-*𝑺𝑬𝑨𝑹𝑪𝑯 𝑴𝑬𝑵𝑼*
-𑁍 ${prefix}𝑦𝑡𝑠 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑔𝑜𝑜𝑔𝑙𝑒 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑔𝑖𝑚𝑎𝑔𝑒 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑤𝑎𝑙𝑙𝑝𝑎𝑝𝑒𝑟 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑤𝑖𝑘𝑖𝑚𝑒𝑑𝑖𝑎 [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑦𝑡𝑠𝑒𝑎𝑟??ℎ [𝒒𝒖𝒆𝒓𝒚]
-𑁍 ${prefix}𝑟𝑖𝑛𝑔𝑡𝑜𝑛𝑒 [𝒒𝒖𝒆𝒓𝒚]
+*قائمة البحث*
+𑁍 ${prefix}𝑦𝑡𝑠 [البحث في اليوتيوب]
+𑁍 ${prefix}𝑔𝑜𝑜𝑔𝑙𝑒 [البحث في غوغل]
+𑁍 ${prefix}𝑔𝑖𝑚𝑎𝑔𝑒 [البحث عن الصور]
+𑁍 ${prefix}𝑤𝑎𝑙𝑙𝑝𝑎𝑝𝑒𝑟 [البحث عن خلفية]
+𑁍 ${prefix}𝑤𝑖𝑘𝑖𝑚𝑒𝑑𝑖𝑎 [البحث في وكبيديا]
+𑁍 ${prefix}𝑦𝑡𝑠𝑒𝑎𝑟??ℎ [البحث في اليوتوب]
+𑁍 ${prefix}𝑟𝑖𝑛𝑔𝑡𝑜𝑛𝑒 [البحث في رنات]
   `
   reply(anu)
             }
 break
 case 'convertmenu': {
 	anu = `
-*𝑪𝑶𝑵𝑽𝑬𝑹𝑻 𝑴𝑬𝑵𝑼*
-𑁍 ${prefix}𝑡𝑜𝑖𝑚𝑎𝑔𝑒
-𑁍 ${prefix}𝑟𝑒𝑚𝑜𝑣𝑒𝑏𝑔
-𑁍 ${prefix}𝑠𝑡𝑖𝑐𝑘𝑒𝑟
-𑁍 ${prefix}𝑒𝑚𝑜𝑗𝑖𝑚𝑖𝑥
-𑁍 ${prefix}𝑡𝑜𝑣𝑖𝑑𝑒𝑜
-𑁍 ${prefix}𝑡𝑜𝑔𝑖𝑓
-𑁍 ${prefix}𝑡𝑜𝑢𝑟𝑙
-𑁍 ${prefix}𝑡𝑜𝑣𝑛
-𑁍 ${prefix}𝑡𝑜𝑚𝑝3
-𑁍 ${prefix}𝑡𝑜𝑎𝑢𝑑𝑖𝑜
-𑁍 ${prefix}𝑠𝑡𝑦𝑙𝑒𝑡𝑒𝑥𝑡
+*قائمة التحويل*
+𑁍 ${prefix}𝑡𝑜𝑖𝑚𝑎𝑔𝑒   (تحويل ملصق لصورة)
+𑁍 ${prefix}𝑟𝑒𝑚𝑜𝑣𝑒𝑏𝑔  (حذف خلفية صورة)
+𑁍 ${prefix}𝑠𝑡𝑖𝑐𝑘𝑒𝑟     (تحويل الى ملصق)
+𑁍 ${prefix}𝑒𝑚𝑜𝑗𝑖𝑚𝑖𝑥   (دمج ايموجيات)
+𑁍 ${prefix}𝑡𝑜𝑣𝑖𝑑𝑒𝑜     (تحويل الى فديو)
+𑁍 ${prefix}𝑡𝑜𝑔𝑖𝑓      (تحويل الى gif)
+𑁍 ${prefix}𝑡𝑜𝑢𝑟𝑙      (تحويل الى رابط)
+𑁍 ${prefix}𝑡𝑜𝑣𝑛      (تحويل الى صوت)
+𑁍 ${prefix}𝑠𝑡𝑦𝑙𝑒𝑡𝑒𝑥𝑡  (تغير خطوط)
   `
   reply(anu)
             }
 break
 case 'mainmenu': {
 	anu = `
-*𝑴𝑨𝑰𝑵 𝑴𝑬𝑵𝑼*
-𑁍 ${prefix}𝑝𝑖𝑛𝑔
-𑁍 ${prefix}𝑜𝑤𝑛𝑒𝑟
+*القائمة الرئيسيه*
+𑁍 ${prefix}𝑝𝑖𝑛𝑔 (البنق)
+𑁍 ${prefix}𝑜𝑤𝑛𝑒𝑟  (المالك)ئ
 𑁍 ${prefix}𝑚𝑒𝑛𝑢 / ${prefix}ℎ𝑒𝑙𝑝 / ${prefix}?
 𑁍 ${prefix}𝑑𝑒𝑙𝑒𝑡𝑒
 𑁍 ${prefix}𝑖𝑛𝑓𝑜𝑐ℎ𝑎𝑡
@@ -1952,7 +1915,7 @@ case 'mainmenu': {
 break
 case 'databasemenu': {
 	anu = `
- *𝑫𝑨𝑻𝑨𝑩𝑨𝑺𝑬 𝑴𝑬𝑵𝑼*
+ *قائمة المعلومات*
 𑁍 ${prefix}𝑠𝑒𝑡𝑐𝑚𝑑
 𑁍 ${prefix}𝑙𝑖𝑠𝑡𝑐𝑚𝑑
 𑁍 ${prefix}𝑑𝑒𝑙𝑐𝑚𝑑
@@ -1977,7 +1940,7 @@ reply(anu)
 break
 case 'voicemenu': {
 	anu = `
-*𝑽𝑶𝑰𝑪𝑬 𝑪𝑯𝑨𝑵𝑮𝑬𝑹*
+*تغير الصوت*
 𑁍 ${prefix}𝑏𝑎𝑠𝑠
 𑁍 ${prefix}𝑏𝑙𝑜𝑤𝑛
 𑁍 ${prefix}𝑑𝑒𝑒𝑝
@@ -1994,15 +1957,15 @@ case 'voicemenu': {
 break
 case 'ownermenu': {
 	anu = `
- *𝑶𝑾𝑵𝑬𝑹 𝑴𝑬𝑵𝑼*
+ *قائمة مالك البوت*
 𑁍 ${prefix}𝑐ℎ𝑎𝑡 [𝒐𝒑𝒕𝒊𝒐𝒏]
 𑁍 ${prefix}𝑗𝑜𝑖𝑛 [𝒍𝒊𝒏𝒌]
 𑁍 ${prefix}𝑙𝑒𝑎𝑣𝑒
-𑁍 ${prefix}𝑏𝑙𝑜𝑐𝑘 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}𝑢𝑛𝑏𝑙𝑜𝑐𝑘 @𝒖𝒔𝒆𝒓
-𑁍 ${prefix}𝑏𝑐𝑔𝑟𝑜𝑢𝑝 [𝒕𝒆𝒙𝒕]
-𑁍 ${prefix}𝑠𝑒𝑡𝑏𝑜𝑡𝑝𝑝 [𝒊𝒎𝒂𝒈𝒆]
-𑁍 ${prefix}𝑠𝑒𝑡𝑒𝑥𝑖𝑓
+𑁍 ${prefix}𝑏𝑙𝑜𝑐𝑘 @مستخدم
+𑁍 ${prefix}𝑢𝑛𝑏𝑙𝑜𝑐𝑘 @مستخدم
+𑁍 ${prefix}𝑏𝑐𝑔𝑟𝑜𝑢𝑝 [نص]
+𑁍 ${prefix}𝑠𝑒𝑡𝑏𝑜𝑡𝑝𝑝 [صورة]
+𑁍 ${prefix}𝑠𝑒𝑡𝑒𝑥𝑖𝑓`
   `
   reply(anu)
             }
